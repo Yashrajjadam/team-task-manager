@@ -4,7 +4,7 @@
   "description": "Full-stack Team Task Manager",
   "scripts": {
     "preinstall": "cd backend && npm install && cd ../frontend && npm install --include=dev",
-    "build": "cd frontend && npm run build",
+    "build": "cd frontend && npm run build && cd .. && mkdir -p backend/public && cp -r frontend/dist/* backend/public/",
     "start": "cd backend && node server.js",
     "postinstall": "npm run build"
   },
