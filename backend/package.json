@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "seed": "node seed/seed.js"
+    "seed": "node seed/seed.js",
+    "build": "cd ../frontend && npm install && npm run build && cd ../backend && mkdir -p public && cp -r ../frontend/dist/* public/",
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": ">=18.0.0"
